@@ -1,9 +1,9 @@
 {
-  "name": "bootstrap-ts",
+  "name": "git-branch-delete-picker",
   "version": "1.0.0",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
-  "repository": "https://github.com/ericbiewener/bootsrap-ts",
+  "repository": "https://github.com/ericbiewener/git-branch-delete-picker",
   "author": "Eric Biewener <ebiewener@gmail.com>",
   "license": "MIT",
   "files": [
