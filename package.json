@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
+  "bin": {
+    "git-delete": "dist/main.js"
+  },
   "repository": "https://github.com/ericbiewener/git-branch-delete-picker",
   "author": "Eric Biewener <ebiewener@gmail.com>",
   "license": "MIT",
@@ -10,7 +13,8 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "tsc",
+    "build": "rm -rf dist && tsc --noEmit false && chmod +x dist/main.js",
+    "prepublish": "yarn build",
     "start": "ts-node src/main.ts",
     "debug": "ts-node --nolazy --inspect-brk=9229 src/main.ts",
     "prettier": "prettier --write \"**/*.{ts,tsx,js}\"",

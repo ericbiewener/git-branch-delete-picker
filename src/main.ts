@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from 'inquirer'
 import simpleGit from 'simple-git/promise'
 import { runCmd } from 'utlz'
@@ -9,6 +10,11 @@ const main = async () => {
   const branchNames = []
   for (const name in branches) {
     if (!branches[name].current) branchNames.push(name)
+  }
+
+  if (!branchNames.length) {
+    console.log('No branches found to delete.')
+    process.exit(0)
   }
 
   const { branchesToDelete } = await inquirer.prompt<{ branchesToDelete: string[] }>({
