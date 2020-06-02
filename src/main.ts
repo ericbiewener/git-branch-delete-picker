@@ -18,13 +18,21 @@ const main = async () => {
   }
 
   const { branchesToDelete } = await inquirer.prompt<{ branchesToDelete: string[] }>({
-    type: 'checkbox',
     name: 'branchesToDelete',
+    type: 'checkbox',
     message: 'Which branches would you like to delete?',
     choices: branchNames,
   })
 
-  runCmd('git', ['br', '-D', ...branchesToDelete])
+  const { confirm } = await inquirer.prompt<{ confirm: boolean }>({
+    name: 'confirm',
+    type: 'confirm',
+    message: `\n${branchesToDelete.join(
+      '\n',
+    )}\n\nAre you sure you want to delete the above branches?`,
+  })
+
+  if (confirm) runCmd('git', ['br', '-D', ...branchesToDelete])
 }
 
 main()
