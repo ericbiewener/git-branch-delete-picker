@@ -20,6 +20,7 @@ const main = async () => {
   const { branchesToDelete } = await inquirer.prompt<{ branchesToDelete: string[] }>({
     name: 'branchesToDelete',
     type: 'checkbox',
+    pageSize: 30,
     message: 'Which branches would you like to delete?',
     choices: branchNames,
   })
