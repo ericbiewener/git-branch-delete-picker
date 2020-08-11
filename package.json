@@ -1,6 +1,6 @@
 {
   "name": "git-branch-delete-picker",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/pickBranchesToDelete.js",
   "bin": {
     "git-delete": "dist/cmd.js"
@@ -59,7 +59,7 @@
     }
   },
   "dependencies": {
-    "cmdca": "4.0.0",
+    "execa": "4.0.0",
     "inquirer": "7.1.0",
     "simple-git": "1.132.0",
     "utlz": "2.3.1"
