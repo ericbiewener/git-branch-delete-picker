@@ -5,7 +5,7 @@ import { runCmd } from 'utlz'
 
 const git = simpleGit()
 
-const main = async () => {
+export const pickBranchesToDelete = async () => {
   const { branches } = await git.branchLocal()
   const branchNames = []
   for (const name in branches) {
@@ -35,5 +35,3 @@ const main = async () => {
 
   if (confirm) runCmd('git', ['br', '-D', ...branchesToDelete])
 }
-
-main()

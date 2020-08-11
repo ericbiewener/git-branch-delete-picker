@@ -11,11 +11,7 @@
     "strict": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "sourceMap": true,
-    "declaration": true,
-    "paths": {
-      "*": ["node_modules/*", "types/*"]
-    }
+    "sourceMap": true
   },
-  "include": ["src/**/*", "types"]
+  "include": ["src", "types"]
 }
