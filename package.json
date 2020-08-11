@@ -1,10 +1,9 @@
 {
   "name": "git-branch-delete-picker",
-  "version": "1.3.0",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "version": "1.4.0",
+  "main": "dist/pickBranchesToDelete.js",
   "bin": {
-    "git-delete": "dist/main.js"
+    "git-delete": "dist/cmd.js"
   },
   "repository": "https://github.com/ericbiewener/git-branch-delete-picker",
   "author": "Eric Biewener <ebiewener@gmail.com>",
@@ -13,10 +12,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc --noEmit false && chmod +x dist/main.js",
+    "build": "rm -rf dist && tsc --noEmit false && chmod +x dist/cmd.js",
     "prepublish": "yarn build",
-    "start": "ts-node src/main.ts",
-    "debug": "ts-node --nolazy --inspect-brk=9229 src/main.ts",
+    "start": "ts-node src/cmd.ts",
+    "debug": "ts-node --nolazy --inspect-brk=9229 src/cmd.ts",
     "prettier": "prettier --write \"**/*.{ts,tsx,js}\"",
     "eslint": "eslint --fix --ext .ts,.tsx ./src",
     "test": "jest",
@@ -60,7 +59,7 @@
     }
   },
   "dependencies": {
-    "execa": "4.0.0",
+    "cmdca": "4.0.0",
     "inquirer": "7.1.0",
     "simple-git": "1.132.0",
     "utlz": "2.3.1"
